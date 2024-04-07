@@ -15,6 +15,7 @@
   # suites.gaming.enable = true;
 
   hardware.nvidia.enable = true;
+  networking.proxy.clash-verge.enable = true;
 
   environment.systemPackages = with pkgs;
     [

@@ -5,9 +5,9 @@
 { lib, config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
+  # imports = [ # Include the results of the hardware scan.
+  #   ./hardware-configuration.nix
+  # ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
@@ -20,7 +20,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
-  # networking.proxy.default = "http://127.0.0.1:7890";
+  networking.proxy.default = "http://pi.aie.moe:7890";
   networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [ 80 443 8080 7777 58101 25565 22000 ];
   networking.firewall.allowedTCPPortRanges = [
@@ -147,7 +147,7 @@
       python311Packages.pyqt6
       python311Packages.pyqt6-sip
       telegram-desktop
-      nixfmt
+      nixfmt-classic
       nil
       texliveFull
       gh

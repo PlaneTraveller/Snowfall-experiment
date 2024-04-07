@@ -1,3 +1,60 @@
 #+title: Snowfall Experiment
 
 My experiments with declaritive systems using snowfall.
+
+* Construction Site
+** Nix plans
+- [X] fix internet
+- [X] How to activate snowfall? choose sys version?
+- [X] installation workflow? maybe try on an existing system (vm) first
+- [X] incorporate into snowflakes
+- [ ] nixify laptop
+- [ ] use Just
+- [ ] migrate to hyprland, get kde 6 working
+- [ ] understand module system and custom options
+
+** Nix stack
+- [X] manage with git versions to enable rollback of =flake.lock=
+- [X] fix git
+- [X] loot! snowfall-starter
+- [X] split config
+- [X] modules hierarchy
+- [X] figure out how Homes and Systems interact
+- [X] try creating a working Homes + Systems
+- [X] create 2 base cases for nixos modules and home modules, migrate to Homes
+- [X] wm level stuff: sys or home? x/wayland
+- [X] home: emacs
+- [X] FIX PROXY!!!!!
+- [X] sys: nvidia; home: git
+- [X] think about what goes sys and what goes home
+- [X] remove and fix conf.nix to make sure its working
+- [X] watch emergent mind
+- [X] determine whether or not to use flakes
+- [X] try figuring out the architecture of sys config
+- [X] users
+- [X] Home?
+- [X] fix ownership
+- [X] create temporary hierarchy
+- [X] know how to split configs
+- [X] Home-system distinction
+- [X] fall home: useful or not? what is it?
+- [ ] make emacs
+- [ ] write template
+- [ ] loot
+- [ ] fix proxy
+- [ ] learn how to use stable
+- [X] disable default user in nixos
+
+
+** Example Configs
+- [[https://nixos.wiki/wiki/Configuration_Collection][Configuration Collection]]
+- [[https://github.com/IogaMaster/snowfall-starter][Snowflake Starter]]
+- [[https://github.com/librephoenix/nixos-config][librephoenix]]
+- [[https://github.com/IogaMaster/dotfiles][IogaMaster]]
+- [[https://github.com/jakehamilton/config/tree/main][Jake Hamilton]]
+- [[https://github.com/Misterio77/nix-starter-configs][nix-starter-config]]
+- [[https://github.com/ryan4yin/nix-config][Ryan4yin]]
+- [[https://github.com/EmergentMind/nix-config][EmergentMind]]
+
+** Tutorials
+- [[https://nixcloud.io/tour/?id=introduction/nix][A tour of Nix]]

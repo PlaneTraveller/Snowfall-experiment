@@ -29,8 +29,8 @@
     #       inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
@@ -70,10 +70,13 @@
     in lib.mkFlake {
       inherit inputs;
       src = ./.;
+
       channels-config = {
         allowUnfree = true;
         permittedInsecurePackages = [ ];
       };
+
+      #== Overlays
       overlays = with inputs; [ ];
 
       #== Systems config

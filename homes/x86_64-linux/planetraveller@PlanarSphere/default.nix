@@ -10,9 +10,11 @@ with lib.literacy; {
     # zsh = enabled;
     # tmux = enabled;
     # neovim = enabled;
-    # home-manager = enabled;
+    home-manager = enabled;
     git = enabled;
   };
+
+  # networking = { proxy = { clash-verge = enabled; }; };
 
   # home.sessionPath = [ "$HOME/bin" ];
 

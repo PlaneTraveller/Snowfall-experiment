@@ -27,6 +27,7 @@ let
   #   '';
 in {
   options.user = with types; {
+    enable = mkOpt types.bool false "Whether to configure the user account.";
     name = mkOpt str "defaultuser" "The name to use for the user account.";
     initialPassword = mkOpt str "password"
       "The initial password to use when the user is first created.";
@@ -38,7 +39,7 @@ in {
       "Extra options passed to <option>users.users.<name></option>.";
   };
 
-  config = {
+  config = mkIf cfg.enable {
     environment.systemPackages = with pkgs;
       [
         # propagatedIcon
