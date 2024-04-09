@@ -3,22 +3,22 @@
 
   #=============================================================
   #== Settings
-  nixConfig = {
-    trusted-users = [ "planetraveller" ];
-    substituters = [
-      # cache mirror located in China
-      # status: https://mirror.sjtu.edu.cn/
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      # status: https://mirrors.ustc.edu.cn/status/
-      # "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://cache.nixos.org"
-      "https://nix-community.cachix.org"
-    ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
+  # nixConfig = {
+  #   trusted-users = [ "planetraveller" ];
+  #   substituters = [
+  #     # cache mirror located in China
+  #     # status: https://mirror.sjtu.edu.cn/
+  #     "https://mirror.sjtu.edu.cn/nix-channels/store"
+  #     # status: https://mirrors.ustc.edu.cn/status/
+  #     # "https://mirrors.ustc.edu.cn/nix-channels/store"
+  #     "https://cache.nixos.org"
+  #     "https://nix-community.cachix.org"
+  #   ];
+  #   trusted-public-keys = [
+  #     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+  #     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  #   ];
+  # };
 
   #=============================================================
   #== Inputs
@@ -36,6 +36,8 @@
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     home-manager.url = "github:nix-community/home-manager/master";
+    # home-manager.url =
+    #   "github:nix-community/home-manager/archive/release-23.11.tar.gz";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     snowfall-lib = {
@@ -84,7 +86,7 @@
         # Global modules
         modules = {
           darwin = with inputs; [ ];
-          nixos = with inputs; [ ];
+          nixos = with inputs; [ home-manager.nixosModules.home-manager ];
         };
 
         hosts = {

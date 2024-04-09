@@ -38,12 +38,13 @@ My experiments with declaritive systems using snowfall.
 - [X] know how to split configs
 - [X] Home-system distinction
 - [X] fall home: useful or not? what is it?
-- [ ] make emacs
-- [ ] write template
-- [ ] loot
-- [ ] fix proxy
-- [ ] learn how to use stable
+- [X] make emacs
+- [X] write template
+- [X] loot
+- [X] fix proxy
+- [X] learn how to use stable
 - [X] disable default user in nixos
+- [ ] remake
 
 
 ** Example Configs

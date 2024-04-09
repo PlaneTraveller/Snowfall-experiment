@@ -15,7 +15,21 @@
   # suites.gaming.enable = true;
 
   hardware.nvidia.enable = true;
-  networking.proxy.clash-verge.enable = true;
+  system = {
+    nix = {
+      default-substituter = {
+        url = "https://mirror.sjtu.edu.cn/nix-channels/store";
+        key = "";
+      };
+      extra-substituters = {
+        "https://cache.nixos.org" = {
+          key =
+            "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
+        };
+      };
+    };
+
+  };
 
   environment.systemPackages = with pkgs;
     [

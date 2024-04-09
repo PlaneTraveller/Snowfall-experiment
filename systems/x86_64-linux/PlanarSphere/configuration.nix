@@ -9,7 +9,7 @@
   #   ./hardware-configuration.nix
   # ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   # nix.settings.substituters = lib.mkForce [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   # Bootloader.
@@ -123,7 +123,7 @@
     isNormalUser = true;
     description = "Huayu";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
+    # shell = pkgs.fish;
     packages = with pkgs; [
       firefox
       git
@@ -162,7 +162,7 @@
       # logiops
       onlyoffice-bin
       lutris
-      discord
+      # discord
       v2raya
       wineWowPackages.stable
       # python311Packages.mne-python

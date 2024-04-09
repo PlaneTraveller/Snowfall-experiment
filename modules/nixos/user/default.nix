@@ -1,94 +1,37 @@
 { options, config, pkgs, lib, ... }:
 with lib;
 with lib.literacy;
-let
-  cfg = config.user;
-  # defaultIconFileName = "profile.png";
-  # defaultIcon = pkgs.stdenvNoCC.mkDerivation {
-  #   name = "default-icon";
-  #   src = ./. + "/${defaultIconFileName}";
-
-  #   dontUnpack = true;
-
-  #   installPhase = ''
-  #     cp $src $out
-  #   '';
-
-  #   passthru = {fileName = defaultIconFileName;};
-  # };
-  # propagatedIcon =
-  #   pkgs.runCommandNoCC "propagated-icon"
-  #   {passthru = {inherit (cfg.icon) fileName;};}
-  #   ''
-  #     local target="$out/share/icons/user/${cfg.name}"
-  #     mkdir -p "$target"
-
-  #     cp ${cfg.icon} "$target/${cfg.icon.fileName}"
-  #   '';
+let cfg = config.user;
 in {
   options.user = with types; {
-    enable = mkOpt types.bool false "Whether to configure the user account.";
-    name = mkOpt str "defaultuser" "The name to use for the user account.";
+    name = mkOpt str "planetraveller" "The name to use for the user account.";
+    fullName = mkOpt str "Huayu Wang" "The full name of the user.";
+    email = mkOpt str "why123jj@126.com" "The email of the user.";
     initialPassword = mkOpt str "password"
       "The initial password to use when the user is first created.";
     # icon =
     #   mkOpt (nullOr package) defaultIcon
     #   "The profile picture to use for the user.";
+    # prompt-init = mkBoolOpt true "Whether or not to show an initial message when opening a new shell.";
     extraGroups = mkOpt (listOf str) [ ] "Groups for the user to be assigned.";
-    extraOptions = mkOpt attrs { }
-      "Extra options passed to <option>users.users.<name></option>.";
+    extraOptions =
+      mkOpt attrs { } (mdDoc "Extra options passed to `users.users.<name>`.");
   };
 
-  config = mkIf cfg.enable {
+  config = {
+    users.users.${cfg.name} = {
+      isNormalUser = true;
+      home = "/home/${cfg.name}";
+      group = "users";
+      shell = pkgs.fish;
+      extraGroups = [ ] ++ cfg.extraGroups;
+    } // cfg.extraOptions;
+
     environment.systemPackages = with pkgs;
       [
         # propagatedIcon
       ];
 
-    # environment.sessionVariables.FLAKE = "/home/iogamaster/.dotfiles";
-
-    # home = {
-    #   file = {
-    #     "Documents/.keep".text = "";
-    #     "Downloads/.keep".text = "";
-    #     "Music/.keep".text = "";
-    #     "Pictures/.keep".text = "";
-    #     "dev/.keep".text = "";
-    #     ".face".source = cfg.icon;
-    #     "Pictures/${
-    #       cfg.icon.fileName or (builtins.baseNameOf cfg.icon)
-    #     }".source =
-    #       cfg.icon;
-    #     "Pictures/profile_old.png".source = ./profile_old.png;
-    #   };
-
-    #   persist.directories = [
-    #     "Documents"
-    #     "Music"
-    #     "Pictures"
-    #     "dev"
-
-    #     ".dotfiles"
-    #   ];
-    # };
-
-    # users.users.${cfg.name} =
-    #   {
-    #     isNormalUser = true;
-    #     inherit (cfg) name initialPassword;
-    #     home = "/home/${cfg.name}";
-    #     group = "users";
-
-    #     hashedPasswordFile = lib.mkForce config.sops.secrets."system/password".path;
-
-    #     extraGroups =
-    #       ["wheel" "audio" "sound" "video" "networkmanager" "input" "tty" "docker"]
-    #       ++ cfg.extraGroups;
-    #   }
-    #   // cfg.extraOptions;
-
-    # users.users.root.hashedPasswordFile = lib.mkForce config.sops.secrets."system/password".path;
-
-    # users.mutableUsers = false;
+    programs.fish = { enable = true; };
   };
 }
