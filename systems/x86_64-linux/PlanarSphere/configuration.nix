@@ -13,53 +13,53 @@
   # nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   # nix.settings.substituters = lib.mkForce [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   # networking.hostName = "PlanarSphere"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
-  networking.proxy.default = "http://pi.aie.moe:7890";
-  networking.firewall.enable = false;
-  networking.firewall.allowedTCPPorts = [ 80 443 8080 7777 58101 25565 22000 ];
-  networking.firewall.allowedTCPPortRanges = [
-    {
-      from = 4000;
-      to = 4007;
-    }
-    {
-      from = 8000;
-      to = 8010;
-    }
-  ];
+  # networking.proxy.default = "http://pi.aie.moe:7890";
+  # networking.firewall.enable = false;
+  # networking.firewall.allowedTCPPorts = [ 80 443 8080 7777 58101 25565 22000 ];
+  # networking.firewall.allowedTCPPortRanges = [
+  #   {
+  #     from = 4000;
+  #     to = 4007;
+  #   }
+  #   {
+  #     from = 8000;
+  #     to = 8010;
+  #   }
+  # ];
 
-  networking.firewall.allowedUDPPorts = [ 24642 ];
-  # networking.proxy.default = "http://pi.aie.moe";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # networking.firewall.allowedUDPPorts = [ 24642 ];
+  # # networking.proxy.default = "http://pi.aie.moe";
+  # # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # # Enable networking
+  # networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
   # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
+  # time.timeZone = "Asia/Shanghai";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  # # Select internationalisation properties.
+  # i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "zh_CN.UTF-8";
-    LC_IDENTIFICATION = "zh_CN.UTF-8";
-    LC_MEASUREMENT = "zh_CN.UTF-8";
-    LC_MONETARY = "zh_CN.UTF-8";
-    LC_NAME = "zh_CN.UTF-8";
-    LC_NUMERIC = "zh_CN.UTF-8";
-    LC_PAPER = "zh_CN.UTF-8";
-    LC_TELEPHONE = "zh_CN.UTF-8";
-    LC_TIME = "zh_CN.UTF-8";
-  };
+  # i18n.extraLocaleSettings = {
+  #   LC_ADDRESS = "zh_CN.UTF-8";
+  #   LC_IDENTIFICATION = "zh_CN.UTF-8";
+  #   LC_MEASUREMENT = "zh_CN.UTF-8";
+  #   LC_MONETARY = "zh_CN.UTF-8";
+  #   LC_NAME = "zh_CN.UTF-8";
+  #   LC_NUMERIC = "zh_CN.UTF-8";
+  #   LC_PAPER = "zh_CN.UTF-8";
+  #   LC_TELEPHONE = "zh_CN.UTF-8";
+  #   LC_TIME = "zh_CN.UTF-8";
+  # };
 
   # # Nvidia config
   # hardware.opengl = {
@@ -116,7 +116,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  programs.fish.enable = true;
+  # programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.planetraveller = {

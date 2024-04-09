@@ -1,6 +1,10 @@
-{ pkgs, ... }: {
+# { pkgs, lib, ... }:
+{ pkgs, config, lib, modulesPath, inputs, ... }:
+
+with lib;
+with lib.literacy; {
   imports = [ ./hardware-configuration.nix ./configuration.nix ];
-  networking.hostName = "PlanarSphere";
+  # networking.hostName = "PlanarSphere";
 
   # Enable Bootloader
   # system.boot.efi.enable = true;
@@ -14,8 +18,15 @@
   # suites.desktop.enable = true;
   # suites.gaming.enable = true;
 
-  hardware.nvidia.enable = true;
+  hardware.nvidia = enabled;
+
   system = {
+    #== Misc
+    boot.efi = enabled;
+    locale = enabled;
+    time = enabled;
+
+    #== Nix
     nix = {
       default-substituter = {
         url = "https://mirror.sjtu.edu.cn/nix-channels/store";
@@ -27,6 +38,36 @@
             "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
         };
       };
+    };
+
+    #== Networking
+    networking = {
+      enable = true;
+      enableFirewall = true;
+
+      openPorts = {
+        "TCP" = [ 80 443 8080 7777 58101 25565 22000 ];
+        "UDP" = [ 24642 ];
+      };
+      openPortRanges = {
+        "TCP" = [
+          {
+            from = 4000;
+            to = 4007;
+          }
+          {
+            from = 8000;
+            to = 8010;
+          }
+        ];
+        "UDP" = [ ];
+      };
+
+      proxy = {
+        httpProxy = "http://pi.aie.moe:7890";
+        httpsProxy = "socks5://pi.aie.moe:7891";
+      };
+
     };
 
   };
