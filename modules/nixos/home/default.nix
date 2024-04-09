@@ -1,9 +1,9 @@
 { options, config, pkgs, lib, inputs, ... }:
 with lib;
 with lib.literacy;
-let cfg = config.home;
+let cfg = config.literacy.home;
 in {
-  options.home = with types; {
+  options.literacy.home = with types; {
     enable = mkBoolOpt true "Enable Home on NixOS";
     file = mkOpt attrs { }
       (mdDoc "A set of files to be managed by home-manager's `home.file`.");
@@ -15,14 +15,15 @@ in {
   config = mkIf cfg.enable {
     # programs.home-manager = enabled;
 
-    home.extraOptions = {
+    literacy.home.extraOptions = {
       home.stateVersion = config.system.stateVersion;
-      home.file = mkAliasDefinitions options.home.file;
+      home.file = mkAliasDefinitions options.literacy.home.file;
       xdg.enable = true;
-      xdg.configFile = mkAliasDefinitions options.home.configFile;
+      xdg.configFile = mkAliasDefinitions options.literacy.home.configFile;
     };
 
-    snowfallorg.user.${config.user.name}.home.config = config.home.extraOptions;
+    snowfallorg.user.${config.literacy.user.name}.home.config =
+      config.literacy.home.extraOptions;
 
     home-manager = {
       useUserPackages = true;

@@ -1,9 +1,9 @@
 { options, config, lib, ... }:
 with lib;
 with lib.literacy;
-let cfg = config.system.boot.efi;
+let cfg = config.literacy.system.boot.efi;
 in {
-  options.system.boot.efi = with types; {
+  options.literacy.system.boot.efi = with types; {
     enable = mkBoolOpt false "Whether or not to enable efi booting.";
   };
 

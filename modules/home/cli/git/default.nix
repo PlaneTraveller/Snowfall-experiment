@@ -2,10 +2,10 @@
 with lib;
 with lib.literacy;
 let
-  cfg = config.cli.git;
-  user = config.user;
+  cfg = config.literacy.cli.git;
+  user = config.literacy.user;
 in {
-  options.cli.git = with types; {
+  options.literacy.cli.git = with types; {
     enable = mkBoolOpt false "Enable or disable git";
     userName = mkOpt types.str user.fullName "The name to configure git with.";
     userEmail = mkOpt types.str user.email "The email to configure git with.";

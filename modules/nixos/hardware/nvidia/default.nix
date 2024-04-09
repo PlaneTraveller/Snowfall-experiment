@@ -1,9 +1,9 @@
 { options, config, lib, ... }:
 with lib;
 with lib.literacy;
-let cfg = config.hardware.nvidia;
+let cfg = config.literacy.hardware.nvidia;
 in {
-  options.hardware.nvidia = with types; {
+  options.literacy.hardware.nvidia = with types; {
     enable = mkBoolOpt false "Enable drivers and patches for Nvidia hardware.";
   };
 

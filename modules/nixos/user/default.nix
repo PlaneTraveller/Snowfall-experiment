@@ -1,9 +1,9 @@
 { options, config, pkgs, lib, ... }:
 with lib;
 with lib.literacy;
-let cfg = config.user;
+let cfg = config.literacy.user;
 in {
-  options.user = with types; {
+  options.literacy.user = with types; {
     name = mkOpt str "planetraveller" "The name to use for the user account.";
     fullName = mkOpt str "Huayu Wang" "The full name of the user.";
     email = mkOpt str "why123jj@126.com" "The email of the user.";

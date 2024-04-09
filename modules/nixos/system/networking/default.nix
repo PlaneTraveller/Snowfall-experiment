@@ -2,12 +2,12 @@
 
 with lib;
 with lib.literacy;
-let cfg = config.system.networking;
+let cfg = config.literacy.system.networking;
 in {
 
   #=============================================================
   #== Options
-  options.system.networking = with types; {
+  options.literacy.system.networking = with types; {
 
     enable = mkBoolOpt false "Whether or not to enable networking support";
     hosts = mkOpt attrs { }
@@ -37,26 +37,7 @@ in {
   #=============================================================
   #== Config
   config = mkIf cfg.enable {
-    user.extraGroups = [ "networkmanager" ];
-
-    # networking.proxy.default = "http://pi.aie.moe:7890";
-    # networking.firewall.enable = cfg.enableFirewall;
-    # networking.firewall.allowedTCPPorts =
-    #   [ 80 443 8080 7777 58101 25565 22000 ];
-    # networking.firewall.allowedTCPPortRanges = [
-    #   {
-    #     from = 4000;
-    #     to = 4007;
-    #   }
-    #   {
-    #     from = 8000;
-    #     to = 8010;
-    #   }
-    # ];
-
-    # networking.firewall.allowedUDPPorts = [ 24642 ];
-    # networking.proxy.default = "http://pi.aie.moe";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+    literacy.user.extraGroups = [ "networkmanager" ];
 
     networking = {
       hosts = {

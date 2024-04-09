@@ -3,7 +3,7 @@
 with lib;
 with lib.literacy;
 let
-  cfg = config.system.nix;
+  cfg = config.literacy.system.nix;
   substituters-submodule = types.submodule ({ name, ... }: {
     options = with types; {
       key =
@@ -13,7 +13,7 @@ let
 in {
   #=============================================================
   #== Options
-  options.system.nix = with types; {
+  options.literacy.system.nix = with types; {
     enable = mkBoolOpt true "Whether or not to manage nix configuration.";
     package = mkOpt package pkgs.nixUnstable "Which nix package to use.";
     #== Substituters
@@ -49,7 +49,7 @@ in {
 
     #== Nix settings
     nix = let
-      users = [ "root" config.user.name ];
+      users = [ "root" config.literacy.user.name ];
       # ++ optional config.services.hydra.enable "hydra";
     in {
       package = cfg.package;

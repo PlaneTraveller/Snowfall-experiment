@@ -1,9 +1,9 @@
 { options, config, lib, ... }:
 with lib;
 with lib.literacy;
-let cfg = config.system.locale;
+let cfg = config.literacy.system.locale;
 in {
-  options.system.locale = with types; {
+  options.literacy.system.locale = with types; {
     enable = mkBoolOpt false "Whether or not to manage locale settings.";
   };
 

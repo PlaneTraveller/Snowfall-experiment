@@ -3,7 +3,7 @@ let
   inherit (lib) types mkIf mkDefault mkMerge;
   inherit (lib.literacy) mkOpt;
 
-  cfg = config.user;
+  cfg = config.literacy.user;
 
   is-linux = pkgs.stdenv.isLinux;
   is-darwin = pkgs.stdenv.isDarwin;
@@ -15,7 +15,7 @@ let
   else
     "/home/${cfg.name}";
 in {
-  options.user = {
+  options.literacy.user = {
     enable = mkOpt types.bool true "Whether to configure the user account.";
     name =
       mkOpt (types.nullOr types.str) ("planetraveller") "The user account.";
