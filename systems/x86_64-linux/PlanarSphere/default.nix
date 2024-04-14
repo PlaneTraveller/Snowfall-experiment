@@ -47,7 +47,8 @@ with lib.literacy; {
         enableFirewall = true;
 
         openPorts = {
-          "TCP" = [ 80 443 8080 7777 58101 25565 22000 ];
+          "TCP" =
+            [ 80 443 8080 7777 58101 25565 22000 21073 20170 20171 21072 ];
           "UDP" = [ 24642 ];
         };
         openPortRanges = {
@@ -65,8 +66,10 @@ with lib.literacy; {
         };
 
         proxy = {
-          httpProxy = "http://pi.aie.moe:7890";
-          httpsProxy = "socks5://pi.aie.moe:7891";
+          # default = "http://pi.aie.moe:7890";
+          # default = "http://127.0.0.1:7890";
+          # httpsProxy = "socks5://pi.aie.moe:7891";
+          default = "http://127.0.0.1:20172";
         };
 
       };
@@ -77,7 +80,21 @@ with lib.literacy; {
   environment.systemPackages = with pkgs;
     [
       # Any particular packages only for this host
+      # aria2
     ];
+
+  virtualisation.docker = enabled;
+  # services.aria2.enable = true
+
+  # continue=true
+  # always-resume=true
+  # file-allocation=falloc
+  # log-level=warn
+  # max-connection-per-server=8
+  # split=8
+  # min-split-size=8M
+  # allow-piece-length-change=true
+  # on-download-complete=exit
 
   # ======================== DO NOT CHANGE THIS ========================
   system.stateVersion = "23.11";

@@ -162,7 +162,7 @@
       # logiops
       onlyoffice-bin
       lutris
-      # discord
+      discord
       v2raya
       wineWowPackages.stable
       # python311Packages.mne-python
@@ -172,9 +172,12 @@
       # tailscale
       miniserve
       cockatrice
+      gcc-unwrapped
+      v2raya
 
     ];
   };
+  services.v2raya.enable = true;
 
   services.tailscale.enable = false;
   services = {
@@ -271,7 +274,7 @@
     # ];
   };
 
-  services.v2raya.enable = false;
+  # services.v2raya.enable = false;
 
   # systemd.user.services.clash = {
   #   enable = true;
@@ -327,9 +330,10 @@
     enable = true;
     proxies = {
       myproxy = {
+        enable = true;
         type = "socks5";
         host = "127.0.0.1";
-        port = 7891;
+        port = 21073;
       };
     };
   };
