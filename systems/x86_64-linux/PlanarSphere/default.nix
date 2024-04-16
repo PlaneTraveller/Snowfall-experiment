@@ -51,6 +51,7 @@ with lib.literacy; {
             [ 80 443 8080 7777 58101 25565 22000 21073 20170 20171 21072 ];
           "UDP" = [ 24642 ];
         };
+
         openPortRanges = {
           "TCP" = [
             {
@@ -73,6 +74,9 @@ with lib.literacy; {
         };
 
       };
+
+      #== Fonts
+      fonts = { enable = true; };
 
     };
   };
