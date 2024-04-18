@@ -79,12 +79,12 @@
   #   package = config.boot.kernelPackages.nvidiaPackages.stable;
   # };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # # Enable the X11 windowing system.
+  # services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # # Enable the KDE Plasma Desktop Environment.
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   # services.xserver = {
@@ -119,161 +119,161 @@
   # programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.planetraveller = {
-    isNormalUser = true;
-    description = "Huayu";
-    extraGroups = [ "networkmanager" "wheel" ];
-    # shell = pkgs.fish;
-    packages = with pkgs; [
-      firefox
-      git
-      emacs29
-      fzf
-      thunderbird
-      libsForQt5.bismuth
-      prismlauncher
-      syncthing
-      qq
-      # clash-meta
-      nodejs
-      cmake
-      gnumake
-      python3
-      python311Packages.epc
-      python311Packages.sexpdata
-      python311Packages.six
-      python311Packages.pynput
-      python311Packages.inflect
-      python311Packages.pyqt6
-      python311Packages.pyqt6-sip
-      telegram-desktop
-      nixfmt-classic
-      nil
-      texliveFull
-      gh
-      libreoffice
-      proxychains
-      cider
-      uxplay
-      godot_4
-      # steam-tui
-      steamPackages.steamcmd
-      solaar
-      # logiops
-      onlyoffice-bin
-      lutris
-      discord
-      v2raya
-      wineWowPackages.stable
-      # python311Packages.mne-python
-      neovim
-      activitywatch
-      temurin-bin-18
-      # tailscale
-      miniserve
-      cockatrice
-      gcc-unwrapped
+  # users.users.planetraveller = {
+  #   isNormalUser = true;
+  #   description = "Huayu";
+  #   extraGroups = [ "networkmanager" "wheel" ];
+  #   # shell = pkgs.fish;
+  #   packages = with pkgs; [
+  #     firefox
+  #     git
+  #     emacs29
+  #     fzf
+  #     thunderbird
+  #     libsForQt5.bismuth
+  #     prismlauncher
+  #     syncthing
+  #     qq
+  #     # clash-meta
+  #     nodejs
+  #     cmake
+  #     gnumake
+  #     python3
+  #     python311Packages.epc
+  #     python311Packages.sexpdata
+  #     python311Packages.six
+  #     python311Packages.pynput
+  #     python311Packages.inflect
+  #     python311Packages.pyqt6
+  #     python311Packages.pyqt6-sip
+  #     telegram-desktop
+  #     nixfmt-classic
+  #     nil
+  #     texliveFull
+  #     gh
+  #     libreoffice
+  #     proxychains
+  #     cider
+  #     uxplay
+  #     godot_4
+  #     # steam-tui
+  #     steamPackages.steamcmd
+  #     solaar
+  #     # logiops
+  #     onlyoffice-bin
+  #     lutris
+  #     discord
+  #     v2raya
+  #     wineWowPackages.stable
+  #     # python311Packages.mne-python
+  #     neovim
+  #     activitywatch
+  #     temurin-bin-18
+  #     # tailscale
+  #     miniserve
+  #     cockatrice
+  #     gcc-unwrapped
 
-    ];
-  };
+  #   ];
+  # };
   # services.v2raya.enable = true;
 
   # services.tailscale.enable = false;
 
-  services = {
-    syncthing = {
-      enable = true;
-      user = "planetraveller";
-      dataDir = "/home/planetraveller";
-      configDir = "/home/planetraveller/.config/syncthing";
-      openDefaultPorts = true;
-      overrideDevices =
-        true; # overrides any devices added or deleted through the WebUI
-      overrideFolders =
-        true; # overrides any folders added or deleted through the WebUI
-      guiAddress = "127.0.0.1:8384";
-      settings = {
-        devices = {
-          "PlanarOutpost" = {
-            id =
-              "DKU7AVM-OGT2QDY-LUJF6PQ-UJ25FJW-MWEPKNQ-BXMKOJR-7EYDGD5-6RCE3QV";
-          };
-        };
-        folders = {
-          "Desktop" = {
-            path = "~/Desktop";
-            devices = [ "PlanarOutpost" ];
-            ignorePerms = true;
-            versioning = {
-              type = "staggered";
-              params = {
-                cleanInterval = "3600";
-                maxAge = "5260000";
-              };
-            };
-          };
-          "Archive" = {
-            path = "~/Archive";
-            devices = [ "PlanarOutpost" ];
-            ignorePerms = true;
-            versioning = {
-              type = "simple";
-              params = { keep = "10"; };
-            };
-          };
-          "Literacy" = {
-            enabled = false;
-            path = "~/Literacy";
-            devices = [ "PlanarOutpost" ];
-            ignorePerms = true;
-            versioning = {
-              type = "staggered";
-              params = {
-                cleanInterval = "3600";
-                maxAge = "15552000";
-              };
-            };
-          };
-          # "Play" = {
-          #   path = "~/Play";
-          #   devices = [ "PlanarOutpost" ];
-          #   ignorePerms = true;
-          #   versioning = {
-          #     type = "simple";
-          #     params = {
-          #       keep = "10";
-          #     };
-          #   };
-          # };
-          "Aesthetics" = {
-            path = "~/Aesthetics";
-            devices = [ "PlanarOutpost" ];
-            ignorePerms = true;
-            versioning = {
-              type = "simple";
-              params = { keep = "10"; };
-            };
-          };
-        };
-      };
-    };
-  };
+  # services = {
+  #   syncthing = {
+  #     enable = true;
+  #     user = "planetraveller";
+  #     dataDir = "/home/planetraveller";
+  #     configDir = "/home/planetraveller/.config/syncthing";
+  #     openDefaultPorts = true;
+  #     overrideDevices =
+  #       true; # overrides any devices added or deleted through the WebUI
+  #     overrideFolders =
+  #       true; # overrides any folders added or deleted through the WebUI
+  #     guiAddress = "127.0.0.1:8384";
+  #     settings = {
+  #       devices = {
+  #         "PlanarOutpost" = {
+  #           id =
+  #             "DKU7AVM-OGT2QDY-LUJF6PQ-UJ25FJW-MWEPKNQ-BXMKOJR-7EYDGD5-6RCE3QV";
+  #         };
+  #       };
+  #       folders = {
+  #         "Desktop" = {
+  #           path = "~/Desktop";
+  #           devices = [ "PlanarOutpost" ];
+  #           ignorePerms = true;
+  #           versioning = {
+  #             type = "staggered";
+  #             params = {
+  #               cleanInterval = "3600";
+  #               maxAge = "5260000";
+  #             };
+  #           };
+  #         };
+  #         "Archive" = {
+  #           path = "~/Archive";
+  #           devices = [ "PlanarOutpost" ];
+  #           ignorePerms = true;
+  #           versioning = {
+  #             type = "simple";
+  #             params = { keep = "10"; };
+  #           };
+  #         };
+  #         "Literacy" = {
+  #           enabled = false;
+  #           path = "~/Literacy";
+  #           devices = [ "PlanarOutpost" ];
+  #           ignorePerms = true;
+  #           versioning = {
+  #             type = "staggered";
+  #             params = {
+  #               cleanInterval = "3600";
+  #               maxAge = "15552000";
+  #             };
+  #           };
+  #         };
+  #         # "Play" = {
+  #         #   path = "~/Play";
+  #         #   devices = [ "PlanarOutpost" ];
+  #         #   ignorePerms = true;
+  #         #   versioning = {
+  #         #     type = "simple";
+  #         #     params = {
+  #         #       keep = "10";
+  #         #     };
+  #         #   };
+  #         # };
+  #         "Aesthetics" = {
+  #           path = "~/Aesthetics";
+  #           devices = [ "PlanarOutpost" ];
+  #           ignorePerms = true;
+  #           versioning = {
+  #             type = "simple";
+  #             params = { keep = "10"; };
+  #           };
+  #         };
+  #       };
+  #     };
+  #   };
+  # };
 
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs;
-      [
-        # fcitx5-mozc
-        # fcitx5-gtk
-        # fcitx5-rime
-        fcitx5-chinese-addons
-      ];
-    # enabled = "ibus";
-    # ibus.engines = with pkgs.ibus-engines; [
-    #   libpinyin
-    #   rime
-    # ];
-  };
+  # i18n.inputMethod = {
+  #   enabled = "fcitx5";
+  #   fcitx5.addons = with pkgs;
+  #     [
+  #       # fcitx5-mozc
+  #       # fcitx5-gtk
+  #       # fcitx5-rime
+  #       fcitx5-chinese-addons
+  #     ];
+  #   # enabled = "ibus";
+  #   # ibus.engines = with pkgs.ibus-engines; [
+  #   #   libpinyin
+  #   #   rime
+  #   # ];
+  # };
 
   # systemd.user.services.clash = {
   #   enable = true;
@@ -319,28 +319,28 @@
   #   ];
   # };
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
+  # programs.steam = {
+  #   enable = true;
+  #   remotePlay.openFirewall = true;
+  #   dedicatedServer.openFirewall = true;
+  # };
 
-  programs.proxychains = {
-    enable = true;
-    proxies = {
-      myproxy = {
-        enable = true;
-        type = "socks5";
-        host = "127.0.0.1";
-        port = 21073;
-      };
-    };
-  };
+  # programs.proxychains = {
+  #   enable = true;
+  #   proxies = {
+  #     myproxy = {
+  #       enable = true;
+  #       type = "socks5";
+  #       host = "127.0.0.1";
+  #       port = 21073;
+  #     };
+  #   };
+  # };
 
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs29;
-  };
+  # services.emacs = {
+  #   enable = true;
+  #   package = pkgs.emacs29;
+  # };
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true;

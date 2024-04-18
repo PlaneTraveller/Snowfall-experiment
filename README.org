@@ -46,12 +46,13 @@ My experiments with declaritive systems using snowfall.
 - [X] disable default user in nixos
 - [X] remake
 - [ ] restructure syncthing
+- [ ] fix proxychains
 - [ ] templates
 - [ ] remake modules hierarchy
 - [ ] migrate and remove configuration.nix
 - [ ] emacs remake
 - [ ] desktop env remake
-- [ ] misc packages
+- [X] misc packages
 
 
 ** Example Configs

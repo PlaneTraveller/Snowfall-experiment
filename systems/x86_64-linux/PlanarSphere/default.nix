@@ -2,7 +2,10 @@
 
 with lib;
 with lib.literacy; {
-  imports = [ ./hardware-configuration.nix ./configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    # ./configuration.nix
+  ];
 
   literacy = {
     #=============================================================
@@ -21,6 +24,7 @@ with lib.literacy; {
       boot.efi = enabled;
       locale = enabled;
       time = enabled;
+      i18n = enabled;
 
       #== Nix
       nix = {
@@ -80,6 +84,17 @@ with lib.literacy; {
     };
 
     #=============================================================
+    #== Apps
+    apps = { steam = enabled; };
+
+    #=============================================================
+    #== System
+    cli = {
+      proxychains = enabled;
+
+    };
+
+    #=============================================================
     #== Others
   };
 
@@ -89,6 +104,69 @@ with lib.literacy; {
     [
       # Any particular packages only for this host
     ];
+
+  literacy.user.extraOptions.packages = with pkgs; [
+    firefox
+    # git
+    emacs29
+    fzf
+    thunderbird
+    libsForQt5.bismuth
+    prismlauncher
+    # syncthing
+    qq
+    # clash-meta
+    nodejs
+    cmake
+    gnumake
+    python3
+    python311Packages.epc
+    python311Packages.sexpdata
+    python311Packages.six
+    python311Packages.pynput
+    python311Packages.inflect
+    python311Packages.pyqt6
+    python311Packages.pyqt6-sip
+    telegram-desktop
+    nixfmt-classic
+    nil
+    texliveFull
+    gh
+    libreoffice
+    # proxychains
+    cider
+    uxplay
+    godot_4
+    # steam-tui
+    # steamPackages.steamcmd
+    solaar
+    # logiops
+    onlyoffice-bin
+    lutris
+    discord
+    # v2raya
+    wineWowPackages.stable
+    # python311Packages.mne-python
+    neovim
+    activitywatch
+    temurin-bin-18
+    # tailscale
+    miniserve
+    cockatrice
+    gcc-unwrapped
+  ];
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs29;
+  };
 
   # virtualisation.docker = enabled;
 
