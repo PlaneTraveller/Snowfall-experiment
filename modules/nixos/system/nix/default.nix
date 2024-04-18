@@ -26,6 +26,7 @@ in {
 
     extra-substituters = mkOpt (attrsOf substituters-submodule) {
       "https://mirror.sjtu.edu.cn/nix-channels/store".key = "";
+
     } "Extra substituters to configure.";
   };
 

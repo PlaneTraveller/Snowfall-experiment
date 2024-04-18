@@ -44,7 +44,14 @@ My experiments with declaritive systems using snowfall.
 - [X] fix proxy
 - [X] learn how to use stable
 - [X] disable default user in nixos
-- [ ] remake
+- [X] remake
+- [ ] restructure syncthing
+- [ ] templates
+- [ ] remake modules hierarchy
+- [ ] migrate and remove configuration.nix
+- [ ] emacs remake
+- [ ] desktop env remake
+- [ ] misc packages
 
 
 ** Example Configs
@@ -59,3 +66,16 @@ My experiments with declaritive systems using snowfall.
 
 ** Tutorials
 - [[https://nixcloud.io/tour/?id=introduction/nix][A tour of Nix]]
+
+* Modules hierarchy
+*** Necessary
+- home
+- user
+- hardware
+- system
+
+*** Apps
+- services
+- apps
+- tools
+- desktop

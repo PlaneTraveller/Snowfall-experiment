@@ -94,7 +94,7 @@
   # };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   # sound.enable = true;
@@ -173,19 +173,20 @@
       miniserve
       cockatrice
       gcc-unwrapped
-      v2raya
 
     ];
   };
-  services.v2raya.enable = true;
+  # services.v2raya.enable = true;
 
-  services.tailscale.enable = false;
+  # services.tailscale.enable = false;
+
   services = {
     syncthing = {
       enable = true;
       user = "planetraveller";
       dataDir = "/home/planetraveller";
       configDir = "/home/planetraveller/.config/syncthing";
+      openDefaultPorts = true;
       overrideDevices =
         true; # overrides any devices added or deleted through the WebUI
       overrideFolders =
@@ -274,8 +275,6 @@
     # ];
   };
 
-  # services.v2raya.enable = false;
-
   # systemd.user.services.clash = {
   #   enable = true;
   #   wantedBy = [ "default.target" ];
@@ -350,7 +349,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs;
     [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       #  wget
     ];
 
