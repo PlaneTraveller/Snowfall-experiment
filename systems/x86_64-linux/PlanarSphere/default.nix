@@ -95,6 +95,10 @@ with lib.literacy; {
     };
 
     #=============================================================
+    #== Desktop
+    # desktop = { plasma6 = enabled; };
+
+    #=============================================================
     #== Others
   };
 
@@ -106,10 +110,12 @@ with lib.literacy; {
     ];
 
   literacy.user.extraOptions.packages = with pkgs; [
+    wget
     firefox
     # git
-    emacs29
+    # emacs29
     fzf
+    # libsForQt5.polonium
     thunderbird
     libsForQt5.bismuth
     prismlauncher
@@ -165,7 +171,7 @@ with lib.literacy; {
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacs29;
+    package = pkgs.emacs29-pgtk;
   };
 
   # virtualisation.docker = enabled;

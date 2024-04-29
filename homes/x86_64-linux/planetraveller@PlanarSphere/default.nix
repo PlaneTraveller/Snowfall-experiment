@@ -14,6 +14,8 @@ with lib.literacy; {
       home-manager = enabled;
       git = enabled;
     };
+
+    apps = { activitywatch = enabled; };
   };
 
   # networking = { proxy = { clash-verge = enabled; }; };
