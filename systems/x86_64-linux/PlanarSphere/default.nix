@@ -56,6 +56,7 @@ with lib.literacy; {
           # default = "http://127.0.0.1:7890";
           # httpsProxy = "socks5://pi.aie.moe:7891";
           # default = "http://127.0.0.1:20172";
+          noProxy = "127.0.0.1";
         };
 
       };
@@ -154,25 +155,28 @@ with lib.literacy; {
     wineWowPackages.stable
     # python311Packages.mne-python
     neovim
-    activitywatch
+    # activitywatch
     temurin-bin-18
     # tailscale
     miniserve
     cockatrice
     gcc-unwrapped
+    direnv
+
+    python311Packages.python-lsp-server
   ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs29-pgtk;
-  };
+  services.lorri.enable = true;
+  # services.emacs = {
+  #   enable = true;
+  #   package = pkgs.emacs29-pgtk;
+  # };
 
   # virtualisation.docker = enabled;
 

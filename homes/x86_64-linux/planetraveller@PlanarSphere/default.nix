@@ -15,7 +15,10 @@ with lib.literacy; {
       git = enabled;
     };
 
-    apps = { activitywatch = enabled; };
+    apps = {
+      activitywatch = enabled;
+      emacs = enabled;
+    };
   };
 
   # networking = { proxy = { clash-verge = enabled; }; };
