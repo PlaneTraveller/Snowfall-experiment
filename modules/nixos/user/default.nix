@@ -13,10 +13,12 @@ in {
     #   mkOpt (nullOr package) defaultIcon
     #   "The profile picture to use for the user.";
     # prompt-init = mkBoolOpt true "Whether or not to show an initial message when opening a new shell.";
-    extraGroups =
-      mkOpt (listOf str) [ "wheel" ] "Groups for the user to be assigned.";
+    extraGroups = mkOpt (listOf str) [ "wheel" "docker" ]
+      "Groups for the user to be assigned.";
     extraOptions =
       mkOpt attrs { } (mdDoc "Extra options passed to `users.users.<name>`.");
+    defaultShell =
+      mkOpt (types.enum [ "nushell" "fish" ]) "nushell" "What shell to use";
   };
 
   config = {
@@ -24,15 +26,15 @@ in {
       isNormalUser = true;
       home = "/home/${cfg.name}";
       group = "users";
-      shell = pkgs.fish;
+      shell = pkgs.${cfg.defaultShell};
       extraGroups = [ ] ++ cfg.extraGroups;
     } // cfg.extraOptions;
 
-    environment.systemPackages = with pkgs;
-      [
-        # propagatedIcon
-        vim
-      ];
+    environment.systemPackages = with pkgs; [
+      # propagatedIcon
+      vim
+      nushellFull
+    ];
 
     programs.fish = { enable = true; };
   };

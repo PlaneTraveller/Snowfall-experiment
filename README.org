@@ -9,7 +9,7 @@ My experiments with declaritive systems using snowfall.
 - [X] installation workflow? maybe try on an existing system (vm) first
 - [X] incorporate into snowflakes
 - [ ] nixify laptop
-- [ ] use Just
+- [X] use Just
 - [ ] migrate to hyprland, get kde 6 working
 - [ ] understand module system and custom options
 
@@ -45,13 +45,19 @@ My experiments with declaritive systems using snowfall.
 - [X] learn how to use stable
 - [X] disable default user in nixos
 - [X] remake
-- [ ] restructure syncthing
-- [ ] fix proxychains
+- [X] restructure syncthing
+- [X] fix proxychains
 - [ ] templates
-- [ ] remake modules hierarchy
-- [ ] migrate and remove configuration.nix
-- [ ] emacs remake
+- [X] remake modules hierarchy
+- [X] migrate and remove configuration.nix
+- [X] emacs remake
+- [ ] refactor! emacs, shell, direnv, just, etc
 - [ ] desktop env remake
+- [ ] laptop nix
+- [ ] make iso & plan
+- [ ] backup plan: snapshot to usb? refactor usb? any ways to keep it around? windows?
+- [ ] dirty install/ dirty + temporary disko/ pure clean
+- [X] get nushell
 - [X] misc packages
 
 
@@ -67,7 +73,11 @@ My experiments with declaritive systems using snowfall.
 
 ** Tutorials
 - [[https://nixcloud.io/tour/?id=introduction/nix][A tour of Nix]]
+- [[https://nixos-and-flakes.thiscute.world/zh/preface][this cute]]
+- [[https://www.youtube.com/watch?v=nLwbNhSxLd4][Everything in one place]]
 
+* Learning Nix
+- [[https://edolstra.github.io/pubs/phd-thesis.pdf][Original Thesis]]
 * Modules hierarchy
 *** Necessary
 - home

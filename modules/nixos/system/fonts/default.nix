@@ -22,14 +22,24 @@ in {
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         noto-fonts-emoji
+        liberation_ttf
 
         source-code-pro
         hack-font
+
+        nerdfonts
         jetbrains-mono
         ibm-plex
         overpass
+        julia-mono
+        merriweather
+        alegreya
+        twitter-color-emoji
+
+        fira-code
+        fira-code-symbols
         emacs-all-the-icons-fonts
-        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ] ++ cfg.fonts;
   };
 }

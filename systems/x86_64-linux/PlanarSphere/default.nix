@@ -161,9 +161,12 @@ with lib.literacy; {
     miniserve
     cockatrice
     gcc-unwrapped
-    direnv
+    # direnv
+    just
 
     python311Packages.python-lsp-server
+    alacritty
+    forge-mtg
   ];
 
   # Enable the X11 windowing system.
@@ -178,7 +181,7 @@ with lib.literacy; {
   #   package = pkgs.emacs29-pgtk;
   # };
 
-  # virtualisation.docker = enabled;
+  virtualisation.docker = enabled;
 
   # ======================== DO NOT CHANGE THIS ========================
   system.stateVersion = "23.11";

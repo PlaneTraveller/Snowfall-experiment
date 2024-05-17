@@ -13,6 +13,8 @@ with lib.literacy; {
       # neovim = enabled;
       home-manager = enabled;
       git = enabled;
+      direnv = enabled;
+      nushell = enabled;
     };
 
     apps = {

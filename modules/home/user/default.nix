@@ -1,4 +1,4 @@
-{ lib, config, pkgs, osConfig ? { }, ... }:
+{ options, lib, config, pkgs, osConfig ? { }, ... }:
 let
   inherit (lib) types mkIf mkDefault mkMerge;
   inherit (lib.literacy) mkOpt;
@@ -38,6 +38,11 @@ in {
         message = "user.home must be set";
       }
     ];
+
+    # programs.fish = { enable = true; };
+
+    # users.defaultUserShell = cfg.defaultShell;
+    # literacy.cli.${cfg.defaultShell}.enable = true;
 
     home = {
       username = mkDefault cfg.name;
