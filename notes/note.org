@@ -1,0 +1,38 @@
+#+title: Note
+
+* Stack
+- [ ] start designing
+
+* Rices
+- use eww for interfaces! (eww + hypr = kde!)
+- hyprland?
+- or just wayland
+- maybe find a good waybar alternative eww conf first
+* Rices
+- [[https://github.com/Aylur/dotfiles][Aylur (nixos + hypr + eww)]]
+- [[https://www.youtube.com/watch?v=ZgHX8jPuHjE][The Perfect System (CTT)]]
+
+* Design
+- nixos
+- hyprland + eww
+- emacs
+- <terminal choice>
+- <browser choice>
+
+** Cli
+- fzf
+- z (to replace cd)
+- eza (to replace ls)
+
+** Shell
+- nushell?
+- or zsh
+
+** Terminal
+- kitty
+- alacritty
+- wezterm
+
+* Philosophy
+- Do one thing and do it well.
+-

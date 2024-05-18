@@ -56,7 +56,9 @@ My experiments with declaritive systems using snowfall.
 - [ ] laptop nix
 - [ ] make iso & plan
 - [ ] backup plan: snapshot to usb? refactor usb? any ways to keep it around? windows?
-- [ ] dirty install/ dirty + temporary disko/ pure clean
+- [X] dirty install/ dirty + temporary disko/ pure clean
+- [ ] write disko config (follow guide on disko page, just copy repo and src_sh{nixos-generate-config --root /mnt & nixos-install})
+- [ ] design usb use
 - [X] get nushell
 - [X] misc packages
 
@@ -90,3 +92,14 @@ My experiments with declaritive systems using snowfall.
 - apps
 - tools
 - desktop
+
+* Installation
+** Stack
+- [X] preferred way to install? by snowfall & flake
+- [X] disko: dual boot? migrate existing setup? different for different systems?
+- [X] nixos-anywhere
+- [ ] just dirty-install!
+- [ ] get unstable iso
+- [ ] write Outpost config
+- [ ] understand and try writing a good btrfs boilerplate disko file w. automation. If not easy, just manually partition
+** Disko

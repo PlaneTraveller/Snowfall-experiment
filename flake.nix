@@ -45,6 +45,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -98,6 +103,13 @@
               #   inherit lib;
               #   device = "/dev/sda";
               # })
+            ];
+          PlnrOutpost.modules = with inputs;
+            [
+              (import ./disks/default.nix {
+                inherit lib;
+                device = "/dev/nvme0n1";
+              })
             ];
         };
       };
