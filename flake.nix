@@ -23,25 +23,33 @@
   #=============================================================
   #== Inputs
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    # home-manager = {
-    #       url = "github:nix-community/home-manager/release-23.11";
-    #       inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
+    #=============================================================
+    #== Core
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
-    home-manager.url = "github:nix-community/home-manager/master";
-    # home-manager.url =
-    #   "github:nix-community/home-manager/archive/release-23.11.tar.gz";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # home-manager.url = "github:nix-community/home-manager/master";
+    # # home-manager.url =
+    # #   "github:nix-community/home-manager/archive/release-23.11.tar.gz";
+    # home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     snowfall-lib = {
       url = "github:snowfallorg/lib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #=============================================================
+    #== Other Nix
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -50,12 +58,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-generators.url = "github:nix-community/nixos-generators";
-    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    # nix-darwin.url = "github:LnL7/nix-darwin";
+    # nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #=============================================================
+    #== Non Nix
   };
 
   #=============================================================
@@ -91,7 +108,10 @@
         # Global modules
         modules = {
           darwin = with inputs; [ ];
-          nixos = with inputs; [ home-manager.nixosModules.home-manager ];
+          nixos = with inputs; [
+            home-manager.nixosModules.home-manager
+            disko.nixosModules.disko
+          ];
         };
 
         hosts = {

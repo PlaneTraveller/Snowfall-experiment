@@ -27,6 +27,9 @@ in {
       home = "/home/${cfg.name}";
       group = "users";
       shell = pkgs.${cfg.defaultShell};
+      # initialHashedPassword =
+      #   "$y$j9T$NpBEKNCwKmn6dPmAzFZ/g.$5BgjFGjjeblNcP9dnBzfOFhaRBKaIZE0HWaggqur6SA";
+      initialPassword = cfg.initialPassword;
       extraGroups = [ ] ++ cfg.extraGroups;
     } // cfg.extraOptions;
 
@@ -35,6 +38,12 @@ in {
       vim
       nushellFull
     ];
+
+    # users.users.root.initialHashedPassword =
+    #   "$y$j9T$NpBEKNCwKmn6dPmAzFZ/g.$5BgjFGjjeblNcP9dnBzfOFhaRBKaIZE0HWaggqur6SA";
+
+    users.users.root.initialPassword = "password";
+    users.mutableUsers = true;
 
     programs.fish = { enable = true; };
   };

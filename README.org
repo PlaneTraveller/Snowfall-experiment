@@ -52,13 +52,14 @@ My experiments with declaritive systems using snowfall.
 - [X] migrate and remove configuration.nix
 - [X] emacs remake
 - [ ] refactor! emacs, shell, direnv, just, etc
+- [ ] rewrite README and refactor note structure
 - [ ] desktop env remake
 - [ ] laptop nix
-- [ ] make iso & plan
-- [ ] backup plan: snapshot to usb? refactor usb? any ways to keep it around? windows?
+- [X] make iso & plan
+- [X] backup plan: snapshot to usb? refactor usb? any ways to keep it around? windows?
 - [X] dirty install/ dirty + temporary disko/ pure clean
-- [ ] write disko config (follow guide on disko page, just copy repo and src_sh{nixos-generate-config --root /mnt & nixos-install})
-- [ ] design usb use
+- [X] write disko config (follow guide on disko page, just copy repo and src_sh{nixos-generate-config --root /mnt & nixos-install})
+- [X] design usb use
 - [X] get nushell
 - [X] misc packages
 
@@ -98,8 +99,42 @@ My experiments with declaritive systems using snowfall.
 - [X] preferred way to install? by snowfall & flake
 - [X] disko: dual boot? migrate existing setup? different for different systems?
 - [X] nixos-anywhere
-- [ ] just dirty-install!
-- [ ] get unstable iso
-- [ ] write Outpost config
-- [ ] understand and try writing a good btrfs boilerplate disko file w. automation. If not easy, just manually partition
+- [X] just dirty-install!
+- [X] get unstable iso
+- [X] write Outpost config
+- [X] understand and try writing a good btrfs boilerplate disko file w. automation. If not easy, just manually partition
+- [ ] how ioga's conf work? what's behind the install? the precedure? build iso?
 ** Disko
+- lvm-vg
+- btrfs
+- My decision is: No swap!
+- An article about swap: https://chrisdown.name/2018/01/02/in-defence-of-swap.html
+** Deploy
+*** Tools
+- deploy-rs
+- nixos-anywhere
+- kexec
+- nixos-generators
+- https://github.com/IogaMaster/blizzard
+
+*** How
+- kexec: basically load another kernal (the installer)
+- nixos-generators: to generate a kexec image
+- nixos-anywhere: autoinstall
+- deploy-rs: auto check for deployment (ssh stuff)
+- Testing:
+#+begin_src bash
+nix build ./#nixosConfigurations.HOSTNAME.config.system.build.installTest -L
+#+end_src
+*** I locked myself out.
+- [[https://www.reddit.com/r/NixOS/comments/126wz0j/locked_myself_out_passwords_dont_work_anymore/][Reddit post]]
+- [[https://askubuntu.com/questions/766048/mount-unknown-filesystem-type-lvm2-member][LVM problem]]
+- just reinstall in the iso (sign)
+
+*** Note
+- Need root access & password at new machine
+#+begin_src bash
+nix run .#install -- <hostname> <ip-address>
+#+end_src
+- the ping will never stop, and the hostname is not ~nixos~
+- manually change the ip and hostname! Need to provide root password!

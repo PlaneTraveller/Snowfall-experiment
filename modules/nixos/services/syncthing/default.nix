@@ -24,15 +24,19 @@ in {
       guiAddress = "127.0.0.1:8384";
       settings = {
         devices = {
-          "PlanarOutpost" = {
+          "PlanarSphere" = {
             id =
-              "DKU7AVM-OGT2QDY-LUJF6PQ-UJ25FJW-MWEPKNQ-BXMKOJR-7EYDGD5-6RCE3QV";
+              "SITLQYT-C33QV2W-5HDTXUG-ZCCTXP3-AH25B3M-AFHRJE7-3U7AM2M-UMKRKAC";
+          };
+          "PlnrOutpost" = {
+            id =
+              "FKE4LPF-F4AKBHD-W5LCPBM-PCGGHDA-OO752RT-XRV7QBA-6TPELIQ-KML5DQQ";
           };
         };
         folders = {
           "Desktop" = {
             path = "~/Desktop";
-            devices = [ "PlanarOutpost" ];
+            devices = [ "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "staggered";
@@ -44,7 +48,7 @@ in {
           };
           "Archive" = {
             path = "~/Archive";
-            devices = [ "PlanarOutpost" ];
+            devices = [ "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "simple";
@@ -54,7 +58,7 @@ in {
           "Literacy" = {
             enabled = false;
             path = "~/Literacy";
-            devices = [ "PlanarOutpost" ];
+            devices = [ "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "staggered";
@@ -66,7 +70,7 @@ in {
           };
           "Aesthetics" = {
             path = "~/Aesthetics";
-            devices = [ "PlanarOutpost" ];
+            devices = [ "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "simple";

@@ -13,6 +13,7 @@ with lib.literacy; {
     hardware = {
       audio = enabled;
       bluetooth = enabled;
+      battery = enabled;
 
     };
 
@@ -24,7 +25,6 @@ with lib.literacy; {
       locale = enabled;
       time = enabled;
       i18n = enabled;
-      battery = enabled;
 
       #== Nix
       nix = {

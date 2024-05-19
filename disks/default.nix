@@ -71,8 +71,6 @@
                   mountOptions = [ "subvol=/" ];
                   mountpoint = "/mnt/defvol";
                 };
-                # An article about swap: https://chrisdown.name/2018/01/02/in-defence-of-swap.html
-                # My decision is: No swap!
               };
             };
           };
