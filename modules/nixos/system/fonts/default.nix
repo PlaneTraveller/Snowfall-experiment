@@ -18,10 +18,14 @@ in {
 
     fonts.packages = with pkgs;
       [
+        sarasa-gothic
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         noto-fonts-emoji
+        noto-fonts-lgc-plus
+        texlivePackages.ctex
+        texlivePackages.noto
         liberation_ttf
 
         source-code-pro

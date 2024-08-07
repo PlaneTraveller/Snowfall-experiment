@@ -1,0 +1,52 @@
+#+title: Hyprland
+
+* Info
+- [[https://www.youtube.com/watch?v=zt3hgSBs11g][Vimjoyer on Hyprland]]
+- [[https://www.youtube.com/watch?v=ljHkWgBaQWU&t=50s][Vimjoyer on Stylix]]
+- [[https://www.youtube.com/watch?v=GvpTUKaXqNk&t=412s][Vimjoyer on AGS]]
+* Nix-Hyprland
+- nix translated to hyprland language dynamically
+** Differences
+- options with "$" or "." should be surrounded by quotes
+- variables with same name can be declared in a list
+#+begin_src
+x = "xxx xxx, xxx"
+#+end_src
+- q: hyprland with no quotes?
+- easy to use plugins
+** Reasons to use
+- nix colors! =config.colorScheme.colors;= (custom functions that use colors) (can use stylix)
+- can use system params
+- can expose options for different machines
+* Stylix
+- use base16 colors
+- can auto generate acc. wallpaper
+- can fix cursors too!
+- can determine fonts (serif, sansSerif, monospace)
+- polarity, transparency, size, etc
+- can disable governence! can force
+-
+* AGS
+- Bar
+- all-in-one Launcher
+- notification menue
+- js or ts
+- libastal: write widgets in any language with JS/TS bindings!
+* Nix Writers
+- convenient for key-binding based scripts
+- have highlighting
+#+begin_src nix
+someJson = /*json*/ ''
+  {
+
+  }
+'';
+#+end_src
+- =writePython3Bin=
+- otter.nvim
+-
+* NH
+- convenient!
+- pretty printing
+- Specialisation! can have different modes of the same computer
+- need nix-output-monitor (pretty nix) and nvd (diff system generations)

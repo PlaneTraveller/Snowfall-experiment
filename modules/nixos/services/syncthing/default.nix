@@ -36,7 +36,7 @@ in {
         folders = {
           "Desktop" = {
             path = "~/Desktop";
-            devices = [ "PlnrOutpost" ];
+            devices = [ "PlanarSphere" "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "staggered";
@@ -48,7 +48,7 @@ in {
           };
           "Archive" = {
             path = "~/Archive";
-            devices = [ "PlnrOutpost" ];
+            devices = [ "PlanarSphere" "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "simple";
@@ -58,7 +58,7 @@ in {
           "Literacy" = {
             enabled = false;
             path = "~/Literacy";
-            devices = [ "PlnrOutpost" ];
+            devices = [ "PlanarSphere" "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "staggered";
@@ -70,7 +70,7 @@ in {
           };
           "Aesthetics" = {
             path = "~/Aesthetics";
-            devices = [ "PlnrOutpost" ];
+            devices = [ "PlanarSphere" "PlnrOutpost" ];
             ignorePerms = true;
             versioning = {
               type = "simple";

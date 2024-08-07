@@ -26,15 +26,15 @@ in {
     services.emacs = {
       enable = true;
       defaultEditor = true;
-      # package = with pkgs;
-      #   ((emacsPackagesFor emacs29-pgtk).emacsWithPackages
-      #     (epkgs: [ epkgs.vterm ]));
+      package = with pkgs;
+        ((emacsPackagesFor emacs29-pgtk).emacsWithPackages
+          (epkgs: [ epkgs.vterm ]));
 
       client = {
         enable = true;
         arguments = [ " --create-frame" ];
       };
-      # startWithUserSession = true;
+      startWithUserSession = true;
     };
 
     home.packages = with pkgs; [

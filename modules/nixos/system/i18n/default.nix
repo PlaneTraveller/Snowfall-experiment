@@ -9,7 +9,7 @@ in {
 
   config = mkIf cfg.enable {
     i18n.inputMethod = {
-      enabled = "fcitx5";
+      type.enable = "fcitx5";
       fcitx5.addons = with pkgs;
         [
           # fcitx5-mozc

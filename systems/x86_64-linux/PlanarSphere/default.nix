@@ -47,8 +47,8 @@ with lib.literacy; {
         enableFirewall = true;
 
         openPorts = {
-          "TCP" = [ 80 443 8080 7777 58101 25565 21073 20170 20171 21072 ];
-          "UDP" = [ 24642 ];
+          "TCP" = [ 80 443 8080 7777 58101 25565 21073 20170 20171 21072 6286 ];
+          "UDP" = [ 24642 6286 41641 ];
         };
 
         proxy = {
@@ -156,7 +156,7 @@ with lib.literacy; {
     # python311Packages.mne-python
     neovim
     # activitywatch
-    temurin-bin-18
+    # temurin-bin-18
     # tailscale
     miniserve
     cockatrice
@@ -167,10 +167,26 @@ with lib.literacy; {
     python311Packages.python-lsp-server
     alacritty
     forge-mtg
+    gimp
+    ffmpeg
+    pandoc
+    pdftk
+    imagemagick
+    poppler
+    poppler_utils
+    via
+    vial
+    ags
   ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  # services.udev.extraRules = ''
+  #   KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+  # '';
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+  '';
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -181,7 +197,35 @@ with lib.literacy; {
   #   package = pkgs.emacs29-pgtk;
   # };
 
-  virtualisation.docker = enabled;
+  services.tailscale.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 6286 ];
+    settings = {
+      PasswordAuthentication = false;
+      AllowUsers = null;
+    };
+
+  };
+  users.users."planetraveller".openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2ZJ/4O2wgBP9PTUlOrnhPolh4xQclVqH0fm9TQbdPp why123jj@126.com"
+  ];
+
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      "proxies" = { "http-proxy" = "127.0.0.1:20171"; };
+
+    };
+
+  };
+
+  programs.nh = {
+    enable = true;
+    clean.enable = false;
+    clean.extraArgs = "--keep-since 7d --keep 5";
+    flake = "/home/planetraveller/Desktop/NixRice/Snowfall-experiment";
+  };
 
   # ======================== DO NOT CHANGE THIS ========================
   system.stateVersion = "23.11";

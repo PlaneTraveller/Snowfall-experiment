@@ -30,13 +30,13 @@ in {
       # initialHashedPassword =
       #   "$y$j9T$NpBEKNCwKmn6dPmAzFZ/g.$5BgjFGjjeblNcP9dnBzfOFhaRBKaIZE0HWaggqur6SA";
       initialPassword = cfg.initialPassword;
-      extraGroups = [ ] ++ cfg.extraGroups;
+      extraGroups = [ "wheel" "docker" ] ++ cfg.extraGroups;
     } // cfg.extraOptions;
 
     environment.systemPackages = with pkgs; [
       # propagatedIcon
       vim
-      nushellFull
+      nushell
     ];
 
     # users.users.root.initialHashedPassword =

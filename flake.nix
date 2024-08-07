@@ -71,6 +71,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     #=============================================================
     #== Non Nix
   };
@@ -124,13 +126,13 @@
               #   device = "/dev/sda";
               # })
             ];
-          PlnrOutpost.modules = with inputs;
-            [
-              (import ./disks/default.nix {
-                inherit lib;
-                device = "/dev/nvme0n1";
-              })
-            ];
+          PlnrOutpost.modules = with inputs; [
+            (import ./disks/default.nix {
+              inherit lib;
+              device = "/dev/nvme0n1";
+            })
+            nixos-hardware.nixosModules.framework-13th-gen-intel
+          ];
         };
       };
 

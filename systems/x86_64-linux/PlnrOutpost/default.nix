@@ -3,7 +3,7 @@
 with lib;
 with lib.literacy; {
   imports = [
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
     # ./configuration.nix
   ];
 
@@ -48,7 +48,7 @@ with lib.literacy; {
 
         openPorts = {
           "TCP" = [ 80 443 8080 7777 58101 25565 21073 20170 20171 21072 ];
-          "UDP" = [ 24642 ];
+          "UDP" = [ 24642 41641 ];
         };
 
         proxy = {
@@ -65,6 +65,10 @@ with lib.literacy; {
       fonts = { enable = true; };
 
     };
+
+    #=============================================================
+    #== User
+    user = { defaultShell = "fish"; };
 
     #=============================================================
     #== Services
@@ -97,7 +101,7 @@ with lib.literacy; {
 
     #=============================================================
     #== Desktop
-    # desktop = { plasma6 = enabled; };
+    desktop = { plasma6 = enabled; };
 
     #=============================================================
     #== Others
@@ -118,7 +122,7 @@ with lib.literacy; {
     fzf
     # libsForQt5.polonium
     thunderbird
-    libsForQt5.bismuth
+    # libsForQt5.bismuth
     prismlauncher
     # syncthing
     qq
@@ -152,37 +156,47 @@ with lib.literacy; {
     lutris
     discord
     # v2raya
-    wineWowPackages.stable
+    # wineWowPackages.stable
     # python311Packages.mne-python
     neovim
     # activitywatch
-    temurin-bin-18
+    # temurin-bin-18
     # tailscale
     miniserve
     cockatrice
-    gcc-unwrapped
+    # gcc-unwrapped
     # direnv
     just
 
     python311Packages.python-lsp-server
     alacritty
     forge-mtg
+    gimp
   ];
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # # Enable the X11 windowing system.
+  # services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.lorri.enable = true;
+  # # Enable the KDE Plasma Desktop Environment.
+  # services.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+  # services.lorri.enable = true;
   # services.emacs = {
   #   enable = true;
   #   package = pkgs.emacs29-pgtk;
   # };
 
+  services.tailscale.enable = true;
   virtualisation.docker = enabled;
+  # security.pam.sshAgentAuth.enable = true;
+  programs.ssh.startAgent = true;
 
+  programs.nh = {
+    enable = true;
+    clean.enable = false;
+    clean.extraArgs = "--keep-since 7d --keep 5";
+    flake = "/home/planetraveller/Desktop/NixRice/Snowfall-experiment";
+  };
   # ======================== DO NOT CHANGE THIS ========================
   system.stateVersion = "23.11";
   # ======================== DO NOT CHANGE THIS ========================

@@ -22,7 +22,7 @@ in {
       xdg.configFile = mkAliasDefinitions options.literacy.home.configFile;
     };
 
-    snowfallorg.user.${config.literacy.user.name}.home.config =
+    snowfallorg.users.${config.literacy.user.name}.home.config =
       config.literacy.home.extraOptions;
 
     home-manager = {
