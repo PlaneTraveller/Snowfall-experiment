@@ -56,7 +56,7 @@ with lib.literacy; {
           # default = "http://127.0.0.1:7890";
           # httpsProxy = "socks5://pi.aie.moe:7891";
           # default = "http://127.0.0.1:20172";
-          noProxy = "127.0.0.1";
+          # noProxy = "127.0.0.1";
         };
 
       };
@@ -162,7 +162,7 @@ with lib.literacy; {
     # activitywatch
     # temurin-bin-18
     # tailscale
-    miniserve
+    # miniserve
     cockatrice
     # gcc-unwrapped
     # direnv
@@ -186,7 +186,7 @@ with lib.literacy; {
   #   package = pkgs.emacs29-pgtk;
   # };
 
-  services.tailscale.enable = true;
+  services.tailscale.enable = false;
   virtualisation.docker = enabled;
   # security.pam.sshAgentAuth.enable = true;
   programs.ssh.startAgent = true;

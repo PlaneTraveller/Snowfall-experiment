@@ -197,7 +197,8 @@ with lib.literacy; {
   #   package = pkgs.emacs29-pgtk;
   # };
 
-  services.tailscale.enable = true;
+  services.tailscale.enable = false;
+
   services.openssh = {
     enable = true;
     ports = [ 6286 ];
@@ -207,6 +208,7 @@ with lib.literacy; {
     };
 
   };
+
   users.users."planetraveller".openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2ZJ/4O2wgBP9PTUlOrnhPolh4xQclVqH0fm9TQbdPp why123jj@126.com"
   ];
@@ -222,7 +224,7 @@ with lib.literacy; {
 
   programs.nh = {
     enable = true;
-    clean.enable = false;
+    clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 5";
     flake = "/home/planetraveller/Desktop/NixRice/Snowfall-experiment";
   };
