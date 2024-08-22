@@ -15,7 +15,7 @@ My experiments with declaritive systems using snowfall.
 - [ ] read old responses to my questions
 - [ ] optimize emacs-nix
 - [ ] desktop env remake
-- [ ] list essential functionalities, evaluate if possible to finish tonight
+- [X] list essential functionalities, evaluate if possible to finish tonight
 - [X] figure out how to write hyprland conf
 - [X] which one is better? hyprland syntax or nix syntax? (nix syntax!)
 - [X] find sample config
@@ -24,6 +24,27 @@ My experiments with declaritive systems using snowfall.
 - [X] watch vimjoyer
 - [X] enable basic hyprland
 - [X] fix bugs (maintain)
+
+*** Tmp Stack
+- [ ] migrate to small
+- [ ] get everything working on my local machine
+- [ ] Fix Git (ssh)
+- [X] Fix Emacs
+- [ ] fix terminal problem
+- [ ] possibly refactor home/nixos management?
+- [ ] flesh out hyprland config
+- [ ] write AGS config
+- [ ] find display manager
+- [ ] write stylix config
+- [ ] figure out how to plug in colors from stylix for hyprland
+- [ ] find example with stylix
+- [X] write out basic hyprland config
+- [X] Get hyprland??
+- [X] find great template
+- [X] find way to modularize hyprland config (separate into files)
+- [X] just switch or flesh out?
+- [X] Collect toolset
+- [X] fix internet first
 
 
 ** Example Configs
@@ -58,11 +79,23 @@ My experiments with declaritive systems using snowfall.
 - apps
 - tools
 - desktop
-* Softwares
-- Hyprland
-- AGS
-- Stylix
-- NH (nix helper)
+* Toolbox
+- [ ] Hyprland
+- [ ] display manager
+- [ ] AGS (notification, app starter, volumn show)
+- [ ] Stylix
+
+- [ ] terminal?
+- [ ] shell
+- [ ] emacs
+- [ ] File browser
+- [ ] Screenshot
+- [ ] clipboard
+- [ ] lock
+- [ ] internet and bluetooth? (systray)
+- [ ] dropdown
+- [ ] keyboard manager
+- [X] NH (nix helper)
 
 * Installation
 :PROPERTIES:

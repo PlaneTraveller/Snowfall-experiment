@@ -52,6 +52,6 @@ in {
 
     ];
 
-    home.sessionPath = [ "$HOME/.config/emacs/bin" ];
+    # home.sessionPath = [ "$HOME/.config/emacs/bin" ];
   };
 }

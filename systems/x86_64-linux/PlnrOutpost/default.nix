@@ -197,6 +197,7 @@ with lib.literacy; {
     clean.extraArgs = "--keep-since 7d --keep 5";
     flake = "/home/planetraveller/Desktop/NixRice/Snowfall-experiment";
   };
+
   # ======================== DO NOT CHANGE THIS ========================
   system.stateVersion = "23.11";
   # ======================== DO NOT CHANGE THIS ========================

@@ -28,7 +28,10 @@
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+      # config = { allowUnfree = true; };
+    };
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     # home-manager.url = "github:nix-community/home-manager/master";
