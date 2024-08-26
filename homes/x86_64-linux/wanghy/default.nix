@@ -18,7 +18,8 @@ with lib.literacy; {
   # programs.ssh.enable = true;
   services.ssh-agent.enable = true;
 
-  # home.sessionPath = [ "$HOME/bin" ];
+ 
+# home.sessionPath = [ "$HOME/bin" ];
 
   home.stateVersion = "23.11";
 }
