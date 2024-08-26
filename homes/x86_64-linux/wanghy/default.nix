@@ -4,7 +4,7 @@ with lib.literacy; {
   literacy = {
     user = {
       enable = true;
-      name = "wanghy"
+      name = "wanghy";
     };
 
     cli = {
@@ -15,6 +15,8 @@ with lib.literacy; {
 
     apps = { };
   };
+  # programs.ssh.enable = true;
+  services.ssh-agent.enable = true;
 
   # home.sessionPath = [ "$HOME/bin" ];
 
