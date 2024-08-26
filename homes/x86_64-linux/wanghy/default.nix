@@ -5,11 +5,12 @@ with lib.literacy; {
     user = {
       enable = true;
       name = "wanghy";
+
     };
 
     cli = {
       home-manager = enabled;
-      git = enabled;
+      # git = enabled;
       direnv = enabled;
     };
 
