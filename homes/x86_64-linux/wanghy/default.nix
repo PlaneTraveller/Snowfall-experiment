@@ -16,8 +16,9 @@ with lib.literacy; {
 
     apps = { };
   };
-  # programs.ssh.enable = true;
+  programs.ssh.enable = true;
   services.ssh-agent.enable = true;
+  programs.fish.enable = true;
 
  
 # home.sessionPath = [ "$HOME/bin" ];
