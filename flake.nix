@@ -145,7 +145,7 @@
       #     [
 
       #     ];
-      #   users = { };
+      #   users = { wanghy.modules = with inputs; [ ]; };
       # };
 
       #== Unknown

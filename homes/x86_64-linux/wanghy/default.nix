@@ -3,8 +3,8 @@
 with lib.literacy; {
   literacy = {
     user = {
-      enable = false;
-      # name = config.snowfallorg.user.name;
+      enable = true;
+      name = "wanghy"
     };
 
     cli = {
