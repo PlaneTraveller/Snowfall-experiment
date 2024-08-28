@@ -20,8 +20,13 @@ with lib.literacy; {
   services.ssh-agent.enable = true;
   programs.fish.enable = true;
 
- 
-# home.sessionPath = [ "$HOME/bin" ];
+  home.pkgs = with pkgs;
+    [
+      btop
+
+    ];
+
+  # home.sessionPath = [ "$HOME/bin" ];
 
   home.stateVersion = "23.11";
 }
