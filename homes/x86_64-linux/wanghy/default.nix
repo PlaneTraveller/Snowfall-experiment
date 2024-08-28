@@ -20,9 +20,10 @@ with lib.literacy; {
   services.ssh-agent.enable = true;
   programs.fish.enable = true;
 
-  home.pkgs = with pkgs;
+  home.packages = with pkgs;
     [
       btop
+      fzf
 
     ];
 
