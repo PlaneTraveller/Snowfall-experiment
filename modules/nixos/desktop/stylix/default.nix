@@ -11,11 +11,15 @@ in {
     stylix = {
       enable = true;
       image = ./wallpapers/rain_world1.png;
-      # cursor = {
-      #   package = pkgs.bibata-cursors;
-      #   name = "Bibata-Modern-Ice";
+      base16Scheme =
+        "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
 
-      # };
+      polarity = "dark";
+      cursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Ice";
+
+      };
     };
   };
 }

@@ -35,11 +35,11 @@ My experiments with declaritive systems using snowfall.
 - [ ] flesh out hyprland config
 - [ ] write AGS config
 - [ ] find display manager
-- [ ] write stylix config
+- [X] write stylix config
 - [ ] figure out how to plug in colors from stylix for hyprland
-- [ ] find example with stylix
+- [X] find example with stylix
 - [ ] find hyprland example
-- [ ] fix home-manager issue
+- [X] fix home-manager issue
 - [X] write out basic hyprland config
 - [X] Get hyprland??
 - [X] find great template
