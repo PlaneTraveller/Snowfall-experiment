@@ -18,7 +18,7 @@ with lib.literacy; {
     };
 
     apps = {
-      activitywatch = enabled;
+      # activitywatch = enabled;
       emacs = enabled;
     };
   };

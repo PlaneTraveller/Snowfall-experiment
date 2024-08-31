@@ -76,6 +76,10 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    ags.url = "github:Aylur/ags";
+
+    stylix.url = "github:danth/stylix";
+
     #=============================================================
     #== Non Nix
   };
@@ -116,6 +120,7 @@
           nixos = with inputs; [
             home-manager.nixosModules.home-manager
             disko.nixosModules.disko
+            stylix.nixosModules.stylix
           ];
         };
 

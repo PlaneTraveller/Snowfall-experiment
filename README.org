@@ -31,13 +31,15 @@ My experiments with declaritive systems using snowfall.
 - [ ] Fix Git (ssh)
 - [X] Fix Emacs
 - [ ] fix terminal problem
-- [ ] possibly refactor home/nixos management?
+- [X] possibly refactor home/nixos management?
 - [ ] flesh out hyprland config
 - [ ] write AGS config
 - [ ] find display manager
 - [ ] write stylix config
 - [ ] figure out how to plug in colors from stylix for hyprland
 - [ ] find example with stylix
+- [ ] find hyprland example
+- [ ] fix home-manager issue
 - [X] write out basic hyprland config
 - [X] Get hyprland??
 - [X] find great template
@@ -58,6 +60,7 @@ My experiments with declaritive systems using snowfall.
 - [[https://github.com/EmergentMind/nix-config][EmergentMind]]
 - [[https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles][Nixos-hyprland (not good)]]
 - [[https://github.com/AlexNabokikh/nix-config][Another hyprland based conf]]
+- [[https://github.com/rbangert/flakes][Another Snowfall Example]]
 
 ** Tutorials
 - [[https://nixcloud.io/tour/?id=introduction/nix][A tour of Nix]]

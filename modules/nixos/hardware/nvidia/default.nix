@@ -11,6 +11,7 @@ in {
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia.modesetting.enable = true;
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+    hardware.nvidia.open = false;
 
     environment.variables = { CUDA_CACHE_PATH = "$XDG_CACHE_HOME/nv"; };
     environment.shellAliases = {

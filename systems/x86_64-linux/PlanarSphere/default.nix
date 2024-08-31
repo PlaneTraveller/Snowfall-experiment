@@ -97,7 +97,11 @@ with lib.literacy; {
 
     #=============================================================
     #== Desktop
-    # desktop = { plasma6 = enabled; };
+    desktop = {
+      # plasma6 = enabled;
+      # hyprland = enabled;
+      stylix = enabled;
+    };
 
     #=============================================================
     #== Others

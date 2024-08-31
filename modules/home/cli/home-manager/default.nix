@@ -11,5 +11,10 @@ in {
     enable = mkEnableOption "home-manager";
   };
 
-  config = mkIf cfg.enable { programs.home-manager = enabled; };
+  config = mkIf cfg.enable {
+    programs.home-manager = {
+      enable = true;
+      # backFileExtension = ".bak";
+    };
+  };
 }
