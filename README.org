@@ -48,6 +48,8 @@ My experiments with declaritive systems using snowfall.
 - [X] Collect toolset
 - [X] fix internet first
 
+** Bugs
+- [ ] git key add everytime
 
 ** Example Configs
 - [[https://nixos.wiki/wiki/Configuration_Collection][Configuration Collection]]

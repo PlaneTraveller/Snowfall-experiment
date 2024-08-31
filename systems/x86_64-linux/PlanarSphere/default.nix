@@ -213,6 +213,7 @@ with lib.literacy; {
 
   };
 
+  programs.ssh.startAgent = true;
   users.users."planetraveller".openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2ZJ/4O2wgBP9PTUlOrnhPolh4xQclVqH0fm9TQbdPp why123jj@126.com"
   ];
