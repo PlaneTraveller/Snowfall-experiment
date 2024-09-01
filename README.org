@@ -36,9 +36,10 @@ My experiments with declaritive systems using snowfall.
 - [ ] write AGS config
 - [ ] find display manager
 - [X] write stylix config
-- [ ] figure out how to plug in colors from stylix for hyprland
+- [X] figure out how to plug in colors from stylix for hyprland
 - [X] find example with stylix
-- [ ] find hyprland example
+- [ ] collect pieces for hyprland config
+- [ ] find nice hyprland example
 - [X] fix home-manager issue
 - [X] write out basic hyprland config
 - [X] Get hyprland??
@@ -88,7 +89,7 @@ My experiments with declaritive systems using snowfall.
 - [ ] Hyprland
 - [ ] display manager
 - [ ] AGS (notification, app starter, volumn show)
-- [ ] Stylix
+- [X] Stylix
 
 - [ ] terminal?
 - [ ] shell
