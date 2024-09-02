@@ -22,5 +22,33 @@ with lib.literacy; {
 
   # home.sessionPath = [ "$HOME/bin" ];
 
+  #== Temporary config
+  services.unison = {
+    enable = true;
+    pairs = {
+      #== Zhao Lab
+      # test command:
+      # unison -sshargs = "-p 22" -root =
+      "zhaolab1-projdir" = {
+        commandOptions = {
+          auto = "true";
+          sshargs = "-p 22";
+        };
+        roots = [
+          "/home/planetraveller/Desktop/Research/ZhaoLab/projects/bert-virus-finder"
+          "ssh://wanghy@10.19.29.122//home/wanghy/bert-virus-finder"
+        ];
+      };
+
+    };
+
+  };
+
+  home.packages = with pkgs;
+    [
+      unison
+
+    ];
+
   home.stateVersion = "23.11";
 }

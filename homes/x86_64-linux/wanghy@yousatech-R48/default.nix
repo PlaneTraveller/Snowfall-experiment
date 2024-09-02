@@ -20,12 +20,12 @@ with lib.literacy; {
   services.ssh-agent.enable = true;
   programs.fish.enable = true;
 
-  home.packages = with pkgs;
-    [
-      btop
-      fzf
+  home.packages = with pkgs; [
+    btop
+    fzf
+    unison
 
-    ];
+  ];
 
   # home.sessionPath = [ "$HOME/bin" ];
 
