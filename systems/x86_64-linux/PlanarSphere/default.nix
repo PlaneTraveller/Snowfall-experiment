@@ -99,8 +99,8 @@ with lib.literacy; {
     #== Desktop
     desktop = {
       # plasma6 = enabled;
-      # hyprland = enabled;
-      stylix = enabled;
+      hyprland = enabled;
+      # stylix = enabled;
     };
 
     #=============================================================
@@ -122,7 +122,7 @@ with lib.literacy; {
     fzf
     # libsForQt5.polonium
     thunderbird
-    libsForQt5.bismuth
+    # libsForQt5.bismuth
     prismlauncher
     # syncthing
     qq
@@ -184,22 +184,17 @@ with lib.literacy; {
   ];
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  # services.udev.extraRules = ''
-  #   KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
-  # '';
+  # services.xserver.enable = true;
+
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
   '';
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+
   services.lorri.enable = true;
-  # services.emacs = {
-  #   enable = true;
-  #   package = pkgs.emacs29-pgtk;
-  # };
 
   services.tailscale.enable = false;
 

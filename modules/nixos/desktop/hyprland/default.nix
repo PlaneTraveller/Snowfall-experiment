@@ -8,6 +8,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    services.xserver.enable = true;
     programs.hyprland.enable = true;
     services.gnome.gnome-keyring.enable = true;
     environment = {
@@ -15,14 +16,12 @@ in {
       # plasma6.excludePackages = [ pkgs.kdePackages.systemsettings ];
     };
 
-    services.xserver = {
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        enableHidpi = true;
-        # theme = "chili";
-        # package = pkgs.sddm;
-      };
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      enableHidpi = true;
+      # theme = "chili";
+      # package = pkgs.sddm;
 
     };
 
@@ -127,17 +126,24 @@ in {
                 ];
 
               };
-              extraConfig = {
-                #== Submaps
-              };
+              # use multi-line quotes!
+              # extraConfig = {
+              #   #== Submaps
+              # };
 
               plugins = [ ];
             };
           };
         };
+        # packages = with pkgs; [];
       };
-      packages = with pkgs; [ wl-clipboard networkmanagerapplet alsa-utils ];
     };
+
+    environment.systemPackages = with pkgs; [
+      wl-clipboard
+      networkmanagerapplet
+      # alsa-utils
+    ];
 
   };
 }
