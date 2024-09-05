@@ -190,6 +190,18 @@ with lib.literacy; {
   virtualisation.docker = enabled;
   # security.pam.sshAgentAuth.enable = true;
   programs.ssh.startAgent = true;
+  services.gnome.gnome-keyring.enable = true;
+
+  # Enable incoming ssh
+  services.openssh = {
+    enable = false;
+    openFirewall = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+
+  };
 
   programs.nh = {
     enable = true;

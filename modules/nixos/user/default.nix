@@ -31,13 +31,15 @@ in {
       #   "$y$j9T$NpBEKNCwKmn6dPmAzFZ/g.$5BgjFGjjeblNcP9dnBzfOFhaRBKaIZE0HWaggqur6SA";
       initialPassword = cfg.initialPassword;
       extraGroups = [ "wheel" "docker" ] ++ cfg.extraGroups;
+      # ignoreShellProgramCheck = true;
     } // cfg.extraOptions;
 
-    environment.systemPackages = with pkgs; [
-      # propagatedIcon
-      vim
-      nushell
-    ];
+    environment.systemPackages = with pkgs;
+      [
+        # propagatedIcon
+        vim
+        # nushell
+      ];
 
     # users.users.root.initialHashedPassword =
     #   "$y$j9T$NpBEKNCwKmn6dPmAzFZ/g.$5BgjFGjjeblNcP9dnBzfOFhaRBKaIZE0HWaggqur6SA";

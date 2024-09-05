@@ -11,25 +11,26 @@ let
     e = "emacsclient --create-frame"; # gui
     et = "emacsclient --create-frame --tty"; # termimal
   };
+  myEmacsPackageFor = emacs:
+    ((pkgs.emacsPackagesFor emacs).emacsWithPackages (epkgs: [ epkgs.vterm ]));
+  emacsPkg = myEmacsPackageFor pkgs.emacs29-pgtk;
 in {
   options.literacy.apps.emacs = with types; {
     enable = mkBoolOpt false "Enable or disable emacs";
   };
 
   config = mkIf cfg.enable {
-    programs.emacs = {
-      enable = true;
-      package = pkgs.emacs29-pgtk;
-      extraPackages = epkgs: [ epkgs.vterm ];
-    };
+    # programs.emacs = {
+    #   enable = true;
+    #   package = pkgs.emacs29-pgtk;
+    #   extraPackages = epkgs: [ epkgs.vterm ];
+    # };
 
+    # Modified pkgs with Ryan's config
     services.emacs = {
       enable = true;
       defaultEditor = true;
-      package = with pkgs;
-        ((emacsPackagesFor emacs29-pgtk).emacsWithPackages
-          (epkgs: [ epkgs.vterm ]));
-
+      package = emacsPkg;
       client = {
         enable = true;
         arguments = [ " --create-frame" ];
@@ -37,21 +38,34 @@ in {
       startWithUserSession = true;
     };
 
-    home.packages = with pkgs; [
-      black
-      python312Packages.pyflakes
-      isort
-      pipenv
-      ripgrep
-      fd
+    home.packages = with pkgs;
+      [
+        black
+        python312Packages.pyflakes
+        isort
+        pipenv
+        ripgrep
+        fd
+        git
+        gnutls
+        imagemagick
+        zstd
+        sqlite
 
-      git
-      gnutls
-      imagemagick
-      zstd
+      ] ++ [ emacsPkg ];
 
-    ];
+    programs = {
+      bash.bashrcExtra = envExtra;
+      zsh.envExtra = envExtra;
+      fish = {
+        interactiveShellInit = envExtra;
+        shellAliases = shellAliases;
+      };
 
-    # home.sessionPath = [ "$HOME/.config/emacs/bin" ];
+      nushell.shellAliases = shellAliases;
+
+    };
+    home.shellAliases = shellAliases;
+
   };
 }
