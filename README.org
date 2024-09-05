@@ -1,36 +1,38 @@
 #+title: Snowfall Experiment
 
-My experiments with declaritive systems using snowfall.
+My experiments with declarative systems using snowfall.
 
 * Construction Site
 ** Nix plans
 - [ ] understand module system and custom options
 
 ** Nix stack
+- [ ] start proper documentation system: document the problems solved
 - [ ] templates
-- [ ] refactor! emacs, shell, direnv, just, etc
+- [X] refactor! emacs, shell, direnv, just, etc
 - [ ] rewrite README and refactor note structure
-- [ ] use stylix
+- [X] use stylix
 - [ ] fix
 - [ ] read old responses to my questions
 - [ ] optimize emacs-nix
 - [ ] desktop env remake
+- [X] fix user-space / system-space separation
 
 *** Tmp: hyprland
 - [ ] migrate to small
 - [ ] get everything working on my local machine
 - [ ] Fix Git (ssh)
 - [X] Fix Emacs
-- [ ] fix terminal problem
+- [X] fix terminal problem
 - [X] possibly refactor home/nixos management?
 - [ ] flesh out hyprland config
 - [ ] write AGS config
 - [ ] find display manager
 
 ** Issues
-- [ ] git key add everytime
-- [ ] random shell, settings not working (migrate shell config to =home=, delete all shell-level stuff at the system level)
-- [ ] emacs problem (examine journelctl for internal problem, fix shell problem first)
+- [ ] git key add every time (ssh-agent? sops? age? how to properly manage secrets)
+- [X] random shell, settings not working (migrate shell config to =home=, delete all shell-level stuff at the system level)
+- [X] emacs problem (examine journelctl for internal problem, fix shell problem first)
 - [ ] desktop not working (specific problem?)
 
 ** Example Configs

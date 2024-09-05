@@ -51,6 +51,7 @@ in {
         imagemagick
         zstd
         sqlite
+        ispell
 
       ] ++ [ emacsPkg ];
 

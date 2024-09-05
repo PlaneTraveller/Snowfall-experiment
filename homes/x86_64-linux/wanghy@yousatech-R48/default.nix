@@ -24,7 +24,7 @@ with lib.literacy; {
     btop
     fzf
     unison
-
+    python311Packages.python-lsp-server
   ];
 
   # home.sessionPath = [ "$HOME/bin" ];
