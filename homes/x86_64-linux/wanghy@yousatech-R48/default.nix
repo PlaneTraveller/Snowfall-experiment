@@ -1,5 +1,9 @@
 { lib, pkgs, config, osConfig ? { }, format ? "unknown", ... }:
 
+let
+  githubToken = builtins.readFile "/home/wanghy/Snowfall-experiment/homes/x86_64-linux/wanghy@yousatech-R48/github.token";
+in
+
 with lib.literacy; {
   literacy = {
     user = {
@@ -27,7 +31,7 @@ with lib.literacy; {
   };
 
   nix.settings = {
-    access-tokens = "github.com=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";
+    access-tokens = githubToken;
   };
 
   home.packages = with pkgs; [
