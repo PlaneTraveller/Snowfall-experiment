@@ -67,6 +67,10 @@ with lib.literacy; {
     };
 
     #=============================================================
+    #== User
+    user = { defaultShell = "fish"; };
+
+    #=============================================================
     #== Services
     services = {
       v2raya = enabled;
@@ -98,8 +102,8 @@ with lib.literacy; {
     #=============================================================
     #== Desktop
     desktop = {
-      # plasma6 = enabled;
-      hyprland = enabled;
+      plasma6 = enabled;
+      # hyprland = enabled;
       # stylix = enabled;
     };
 

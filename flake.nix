@@ -145,13 +145,14 @@
       };
 
       #== Homes config
-      # homes = {
-      #   modules = with inputs;
-      #     [
+      homes = {
+        modules = with inputs;
+          [
+            ags.homeManagerModules.default
 
-      #     ];
-      #   users = { wanghy.modules = with inputs; [ ]; };
-      # };
+          ];
+        # users = { wanghy.modules = with inputs; [ ]; };
+      };
 
       #== Unknown
       # templates = import ./templates { };

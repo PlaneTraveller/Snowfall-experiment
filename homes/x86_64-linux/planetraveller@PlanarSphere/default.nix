@@ -14,7 +14,7 @@ with lib.literacy; {
       home-manager = enabled;
       git = enabled;
       direnv = enabled;
-      nushell = enabled;
+      # nushell = enabled;
     };
 
     apps = {
@@ -24,7 +24,7 @@ with lib.literacy; {
   };
 
   # networking = { proxy = { clash-verge = enabled; }; };
-
+  programs.fish.enable = true;
   # home.sessionPath = [ "$HOME/bin" ];
 
   home.stateVersion = "23.11";
