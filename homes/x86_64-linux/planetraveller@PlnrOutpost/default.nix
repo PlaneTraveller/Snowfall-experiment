@@ -1,5 +1,9 @@
 { lib, pkgs, config, osConfig ? { }, format ? "unknown", ... }:
 
+# let
+#   githubToken = builtins.readFile
+#     "/home/planetraveller/Desktop/NixRice/Snowfall-experiment/homes/x86_64-linux/planetraveller@PlnrOutpost/github.token";
+# in
 with lib.literacy; {
   literacy = {
     user = {
@@ -55,5 +59,6 @@ with lib.literacy; {
     pv
   ];
 
+  # nix.settings = { access-tokens = githubToken; };
   home.stateVersion = "23.11";
 }
